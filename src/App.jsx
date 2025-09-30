@@ -25,7 +25,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="flex max-w-[1000px] flex-col bg-white md:flex-row md:rounded-l-3xl md:rounded-r-3xl">
       <FormSide
         handleMortgage={handleMortgage}
         mortgage={mortgage}

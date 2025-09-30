@@ -1,7 +1,7 @@
 export default function FilledFormResult({ mortgage }) {
   console.log(mortgage);
   return (
-    <div className="bg-my-slate-900 flex flex-col gap-4 p-6 text-white">
+    <div className="bg-my-slate-900 flex flex-col gap-4 p-6 text-white md:basis-1/2 md:gap-10 md:rounded-r-3xl md:rounded-bl-[4rem] md:pt-20">
       <h2 className="text-xl font-semibold">Your results</h2>
       <p className="text-my-slate-500">
         Your results are shown below based on the information you provided. To

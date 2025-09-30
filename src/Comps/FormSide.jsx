@@ -2,7 +2,7 @@ import calc from "/icon-calculator.svg";
 
 export default function FormSide({ handleMortgage, mortgage, clearAll }) {
   return (
-    <div className="p-4 py-5 pb-10">
+    <div className="bg-white p-4 py-5 pb-10 md:basis-1/2 md:rounded-l-2xl">
       <div className="mb-7 flex flex-col items-start gap-1">
         <h1 className="text-xl font-semibold">Mortgage Calculator</h1>
         <button className="text-my-slate-500 underline underline-offset-3">
