@@ -68,7 +68,8 @@ $$
 
 ## Preview
 
-![App Preview]( Future Improvements
+https://Dzik0.github.io/mortgage-calculator/
+![App Preview](./screenshot.jpg)
 
 - Add validation and error handling for inputs.
 - Support additional mortgage types or custom terms.
