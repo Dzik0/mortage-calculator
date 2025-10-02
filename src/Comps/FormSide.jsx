@@ -5,13 +5,18 @@ export default function FormSide({
   mortgage,
   clearAll,
   sendForm,
+  formFilled,
 }) {
+  console.log(mortgage.type);
+  const style = { backgroundColor: "hsl(61, 81%, 79%)" };
+  const styleTwo = { backgroundColor: "hsl(61, 81%, 79%)" };
+
   return (
     <div className="bg-white p-4 py-5 pb-10 md:basis-1/2 md:rounded-l-2xl">
       <div className="mb-7 flex flex-col items-start gap-1">
         <h1 className="text-xl font-semibold">Mortgage Calculator</h1>
         <button
-          className="text-my-slate-500 underline underline-offset-3"
+          className="text-my-slate-500 hover:text-my-slate-900 cursor-pointer underline underline-offset-3"
           onClick={clearAll}
         >
           Clear All
@@ -79,15 +84,18 @@ export default function FormSide({
       </div>
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2">Mortgage Type</legend>
-        <div className="border-my-slate-300 flex items-center rounded-md border p-3">
+        <div
+          className="border-my-slate-300 flex items-center rounded-md border p-3"
+          style={mortgage.type === 1 ? style : undefined}
+        >
           <input
             type="radio"
             name="type"
             id="type"
-            className="mr-3 h-5 w-5"
+            className="mr-3 h-5 w-5 cursor-pointer"
             value="1"
             onChange={handleInput}
-            defaultChecked
+            checked={mortgage.type === 1 ? true : false}
           />
 
           <label
@@ -97,12 +105,15 @@ export default function FormSide({
             Repayment
           </label>
         </div>
-        <div className="border-my-slate-300 flex items-center rounded-md border p-3">
+        <div
+          className="border-my-slate-300 flex items-center rounded-md border p-3"
+          style={mortgage.type === 2 ? style : undefined}
+        >
           <input
             type="radio"
             name="type"
             id="type"
-            className="z-0 mr-3 h-5 w-5"
+            className="z-0 mr-3 h-5 w-5 cursor-pointer"
             value="2"
             onChange={handleInput}
           />
@@ -115,13 +126,15 @@ export default function FormSide({
           </label>
         </div>
       </fieldset>
-      <button
-        className="bg-my-lime mt-6 flex w-full justify-center gap-3 rounded-4xl p-4 font-bold"
-        onClick={sendForm}
-      >
-        <img src={calc} alt="" />
-        Calculate Repayments
-      </button>
+      {!formFilled && (
+        <button
+          className="bg-my-lime hover:bg-my-lime-dark mt-6 flex w-full cursor-pointer justify-center gap-3 rounded-4xl p-4 font-bold"
+          onClick={sendForm}
+        >
+          <img src={calc} alt="" />
+          Calculate Repayments
+        </button>
+      )}
     </div>
   );
 }

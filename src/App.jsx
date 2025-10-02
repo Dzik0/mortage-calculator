@@ -15,8 +15,8 @@ export default function App() {
 
   function clearAll(e) {
     setMortgage({
-      amount: 0,
-      term: 0,
+      amount: 100,
+      term: 1,
       rate: 0,
       type: 1,
     });
@@ -40,6 +40,7 @@ export default function App() {
         clearAll={clearAll}
         handleInput={handleInput}
         sendForm={sendForm}
+        formFilled={formFilled}
       />
       {formFilled ? (
         <FilledFormResult mortgage={mortgage} />

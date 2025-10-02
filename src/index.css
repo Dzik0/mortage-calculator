@@ -4,6 +4,7 @@
 
 @theme {
   --color-my-lime: hsl(61, 70%, 52%);
+  --color-my-lime-dark: hsl(61, 93%, 41%);
   --color-my-red: hsl(4, 69%, 50%);
   --color-my-white: hsl(0, 0%, 100%);
   --color-my-slate-100: hsl(202, 86%, 94%);
@@ -33,4 +34,32 @@ img {
 }
 button {
   font-family: inherit;
+}
+
+/* input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+} */
+
+input[type="radio"]:checked:after {
+  width: 16px;
+  height: 16px;
+  border-radius: 15px;
+  top: 0px;
+  left: 2px;
+  position: relative;
+  background-color: hsl(57, 86%, 46%);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }
