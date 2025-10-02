@@ -132,7 +132,7 @@ export default function FormSide({
           onClick={sendForm}
         >
           <img src={calc} alt="" />
-          Calculate Repayments
+          Calculate {mortgage.type === 1 ? "Repayments" : "Interest Only"}
         </button>
       )}
     </div>
