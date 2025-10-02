@@ -5,31 +5,41 @@ import FilledFormResult from "./Comps/FilledFormResult";
 
 export default function App() {
   const [mortgage, setMortgage] = useState({
-    amount: "",
-    term: "",
-    rate: "",
+    amount: 100,
+    term: 1,
+    rate: 0,
     type: 1,
   });
+
   const [formFilled, setFormFilled] = useState(false);
 
-  function handleMortgage(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    setMortgage(data);
+  function clearAll(e) {
+    setMortgage({
+      amount: 0,
+      term: 0,
+      rate: 0,
+      type: 1,
+    });
+
+    setFormFilled(false);
+  }
+
+  function sendForm() {
     setFormFilled(true);
   }
 
-  function clearAll(e) {
-    setFormFilled(false);
+  function handleInput(e) {
+    const { name, value } = e.currentTarget;
+    setMortgage((pS) => ({ ...pS, [name]: value === "" ? "" : Number(value) }));
   }
 
   return (
     <div className="flex max-w-[1000px] flex-col bg-white md:flex-row md:rounded-l-3xl md:rounded-r-3xl">
       <FormSide
-        handleMortgage={handleMortgage}
         mortgage={mortgage}
         clearAll={clearAll}
+        handleInput={handleInput}
+        sendForm={sendForm}
       />
       {formFilled ? (
         <FilledFormResult mortgage={mortgage} />
