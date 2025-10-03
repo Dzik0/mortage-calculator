@@ -1,7 +1,3 @@
-Here is the completed README.md content with your details filled in:
-
----
-
 # Mortgage Calculator React App
 
 This is a mortgage calculator web application built with React. It allows users to calculate monthly mortgage repayments, total repayment amounts, and total interest over the term for two types of mortgages: **Repayment** and **Interest Only**.
